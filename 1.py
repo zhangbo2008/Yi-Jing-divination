@@ -218,11 +218,11 @@ with demo: # 触发函数都写这里.s
   qingkong.click(fn=f2, inputs=[a2,a4,a6,a8,a10,a12], outputs=[a2,a4,a6,a8,a10,a12])
   
   
-  
+  # a是第一次, f是第六次.
   def f3(a,b,c,d,e,f): #最核心的算卦函数!!!!!!!!!!!!!!!!!!!!!!
     
     # 我们正挂用0,1编码 1阳, 0阴. 然后按照 第六手.... 第一手的顺序排列. 所以是2的6次幂.也就是64挂.
-    
+    print('jinruf3')
     zhenggua=[] # 正挂
     for i in [f,e,d,c,b,a]:
          if  i.count('正')%2==1:
@@ -362,12 +362,12 @@ with demo: # 触发函数都写这里.s
     
     
     
-    return  '本挂编码:'+''.join(zhenggua)+'  变卦编码:'+''.join(biangua) + '  本卦挂名:' + benguaguaming+ '  变卦挂名:' + bianguaguaming + '  变爻数量:' + str(bianyaodeshuliang) + '策略: '+celue + '解释:'+ jieshi2
+    return  '本挂编码:'+''.join(zhenggua)+' \n 变卦编码:'+''.join(biangua) + ' \n 本卦挂名:' + benguaguaming+ ' \n 变卦挂名:' + bianguaguaming + ' \n 变爻数量:' + str(bianyaodeshuliang) + '\n策略: '+celue + '\n解释:'+ jieshi2
   
   
   qingkong2.click(fn=f3, inputs=[a2,a4,a6,a8,a10,a12], outputs=[jieshi])
 
-  demo.launch()
+demo.launch(server_port=5000,server_name='0.0.0.0')
 
 
 
